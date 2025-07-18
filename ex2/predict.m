@@ -22,7 +22,7 @@ p = sigmoid(X * theta);
 % sigmoid calculated value.
 % NOTE: Likely a non-iterative way to do this one, but this was too
 % easy to pass up. :)
-for i = 1:size(p),
+for i = 1:length(p),
 	if (p(i) >= 0.5)
 		p(i) = 1;
 	else
