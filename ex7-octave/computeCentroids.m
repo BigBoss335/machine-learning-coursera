@@ -25,14 +25,19 @@ centroids = zeros(K, n);
 %
 % Note: You can use a for-loop over the centroids to compute this.
 %
+count = zeros(K);
+sum_arr = zeros(K,n);
+for i = 1:m
+    mu_i = idx(i);
+    sum_arr(mu_i,:) = sum_arr(mu_i,:) + X(i,:);
+    count(mu_i) = count(mu_i) + 1;
+end
 
-
-
-
-
-
-
-
+for i = 1:K
+    if count(i) ~= 0
+        centroids(i,:) = sum_arr(i,:)/count(i);
+    end
+end
 % =============================================================
 
 
