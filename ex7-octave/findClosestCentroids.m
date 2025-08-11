@@ -20,13 +20,11 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
-
+m = size(X,1);
+for i = 1:m
+    norm_matrix = sum((X(i,:)-centroids).^2,2);
+    [~,idx(i)] = min(norm_matrix);
+end
 % =============================================================
 
 end
